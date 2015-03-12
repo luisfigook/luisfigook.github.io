@@ -1,73 +1,54 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640">
+    <meta name="description" content="Luisfigook.GitHub.io : luisfigook技术blog">
 
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
-    <title>Luisfigook.GitHub.io by luisfigook</title>
+    <title>Luisfigook.GitHub.io</title>
   </head>
 
   <body>
-    <a id="forkme_banner" href="https://github.com/luisfigook">View on GitHub</a>
-    <div class="shell">
 
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Luisfigook.GitHub.io</h1>
-            <h2>luisfigook技术blog</h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/luisfigook">View on GitHub</a>
 
-      <div id="no-downloads">
-        <span class="inner">
-        </span>
-      </div>
+          <h1 id="project_title">Luisfigook.GitHub.io</h1>
+          <h2 id="project_tagline">luisfigook技术blog</h2>
 
+        </header>
+    </div>
 
-      <span class="banner-fix"></span>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>今天用PHP GD生成图片，取远程微信头像，发现用file_get_contents函数取很慢，后来发现用curl获取很快，所以分享下：   </p>
 
-
-      <section id="main_content">
-        <pre><code>    $avatar_url = "http://wx.qlogo.cn/mmopen/Z8QF8O0IACNgJkRJz4wJISKfQgbCVJTDxMLd0ib8ED2a5BgDry3pBufX9UASMKvVY2CffsgmOppvEgpGA2DFG3jyxsicGgecHG/0";
-    $this-&gt;load-&gt;library('Curl');
-    $avatar = $this-&gt;curl-&gt;simple_get($avatar_url);
-    $source = imagecreatefromstring($avatar);
-    $size =  getimagesizefromstring($avatar);
-    imagecopyresized($bg, $source, 23, 32, 0, 0, 87, 87, $size[0], $size[1]);
-</code></pre>
+<p><code>$avatar_url = "http://wx.qlogo.cn/mmopen/Z8QF8O0IACNgJkRJz4wJISKfQgbCVJTDxMLd0ib8ED2a5BgDry3pBufX9UASMKvVY2CffsgmOppvEgpGA2DFG3jyxsicGgecHG/0";</code>
+        <code>$this-&gt;load-&gt;library('Curl');</code>
+        <code>$avatar = $this-&gt;curl-&gt;simple_get($avatar_url);</code>
+        <code>$source = imagecreatefromstring($avatar);</code>
+        <code>$size =  getimagesizefromstring($avatar);</code>
+        <code>imagecopyresized($bg, $source, 23, 32, 0, 0, 87, 87, $size[0], $size[1]);</code>
+        <code>// 输出图像</code>
+        <code>header("Content-type: image/jpeg");</code>
+        <code>imagejpeg($bg);</code></p>
       </section>
+    </div>
 
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>Projects by <a href="https://github.com/luisfigook">luisfigook</a> can be found on <a href="https://github.com/luisfigook">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
-
     </div>
 
     
+
   </body>
 </html>
